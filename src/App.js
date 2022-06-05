@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import { useRoutes } from "react-router-dom";
+import Layout from "./components/Layout/Layout";
+import ToDoContextProvider from "./store/Context";
+import AllMeetups from "./pages/AllMeetups/AllMeetups";
+import FavMeetups from "./pages/FavMeetups/FavMeetups";
+import NewMeetup from "./pages/NewMeetup/NewMeetupCreate";
 
 function App() {
+
+  const AllMeetupPaths = () => useRoutes([
+    { path: "/", element: <AllMeetups /> },
+    { path: "/allmeetups", element: <AllMeetups /> },
+    { path: "/newmeetup", element: <NewMeetup /> },
+    { path: "/favmeetups", element: <FavMeetups /> },
+  ]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <ToDoContextProvider>
+        <Layout>
+        </Layout>
+        <AllMeetupPaths />
+      </ToDoContextProvider>
+    </>
   );
 }
 

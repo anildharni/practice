@@ -1,5 +1,7 @@
 # I want to create to a new meetup list app and I want to use this as my scribbling pad.
 
+# warning: crappy unrefined, unoptimised code.
+
 # started at 9.25AM # Completed at 4.48PM
 
 # Firstly, I would like to create a Navbar

@@ -1,10 +1,13 @@
 import React, { useState } from 'react'
 import QuestionItem from './QuestionItem'
 
-fetch('https://meetuplist-ead78-default-rtdb.asia-southeast1.firebasedatabase.app/quiz-app.json',
-{
-    method:"GET"
-})
+const url = "https://meetuplist-ead78-default-rtdb.asia-southeast1.firebasedatabase.app/quiz-app.json"
+
+useEffect(
+    fetch(url)
+        .then((res) => {
+            return res.json()
+        }), [])
 
 const question_list = [
     {
@@ -78,7 +81,6 @@ function Question() {
     }
 
     return (
-
         question_list
             .filter(
                 (question) => question.id === questionNumber)

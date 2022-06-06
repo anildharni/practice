@@ -1,18 +1,15 @@
 # Objective:
 Practicing React Concepts such as React-Router-DOM v6, UseRoutes, UseContext, UseState and UseNaviagtion hooks
 
-- I want to create meetup list app where I can create and add a meetup to favorites.
+- I want to create a quiz app where a user can answer the questions and you can store the answers with next and previous buttons and final score should be displayed.
 
-- I want to use this as my scribbling pad so whatever you see here is crappy, unrefined and unoptimised code. You have been warned
+- I want to use this as my scribbling pad so whatever you see here is crappy, unrefined and unoptimised code. You have been warned.
 
-## Firstly, I would like to create a Navbar
-- using react-router to navigate the page
-- In versions greater than React-routerV6.0 We have to wrap the BrowserHistory around App in index js component
-- It's better to make use of useRoutes hook.
+## Firstly, I want to start by creating question components.
 
-## Learn the differences between using useRoutes and traditional <Routes><Route><Url> kind of syntax
 
-## Use context for state management
 
-## started at 9.25AM # Completed at 4.48PM
 
+
+
+Time started at 10.27AM Took break at 11.16AM Resuming back 11:28AM Break at 12.00AM Resumed at 12.03 Break at 12.12PM Starting back at 12.23PM Completed at 12.58PM

@@ -1,6 +1,11 @@
 import React, { useState } from 'react'
 import QuestionItem from './QuestionItem'
 
+fetch('https://meetuplist-ead78-default-rtdb.asia-southeast1.firebasedatabase.app/quiz-app.json',
+{
+    method:"GET"
+})
+
 const question_list = [
     {
         id: 1,

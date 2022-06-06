@@ -1,64 +1,29 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import QuestionItem from './QuestionItem'
 
-const url = "https://meetuplist-ead78-default-rtdb.asia-southeast1.firebasedatabase.app/quiz-app.json"
-
-useEffect(
-    fetch(url)
-        .then((res) => {
-            return res.json()
-        }), [])
-
-const question_list = [
-    {
-        id: 1,
-        q: 'what is 2*1',
-        a: '1',
-        b: '2',
-        c: '3',
-        d: '4'
-    },
-    {
-        id: 2,
-        q: 'what is 2*2',
-        a: '4',
-        b: '5',
-        c: '6',
-        d: '7'
-    },
-    {
-        id: 3,
-        q: 'what is 2*3',
-        a: '9',
-        b: '7',
-        c: '8',
-        d: '6'
-    },
-    {
-        id: 4,
-        q: 'what is 2*4',
-        a: '4',
-        b: '8',
-        c: '12',
-        d: '16'
-    },
-    {
-        id: 5,
-        q: 'what is 2*5',
-        a: '11',
-        b: '12',
-        c: '10',
-        d: '19'
-    }
-]
-
-
-
 function Question() {
+
     const [questionNumber, setQuestionNumber] = useState(1);
     const [optionArray, setOptionArray] = useState({});
     const correctAnswers = { 1: 'B', 2: 'A', 3: 'D', 4: 'B', 5: 'C' }
     const [highScore, setHighScore] = useState(0);
+    const [questionData, setQuestionData] = useState([]);
+
+    const url = "https://meetuplist-ead78-default-rtdb.asia-southeast1.firebasedatabase.app/quiz-app.json"
+
+    useEffect(() => {
+        fetch(url)
+            .then(res => {
+                return res.json()
+            }).then(res => {
+                const question_list = []
+                res.map(question => {
+                    return question_list.push(question)
+                })
+                setQuestionData(question_list)
+            })
+    },
+        [])
 
     const prevQuestionHandler = () => {
         return setQuestionNumber(questionNumber - 1);
@@ -81,13 +46,12 @@ function Question() {
     }
 
     return (
-        question_list
+        questionData
             .filter(
                 (question) => question.id === questionNumber)
             .map((question) => {
-                return <>
+                return <div key={questionNumber}>
                     <QuestionItem
-                        key={questionNumber}
                         question={question}
                         options={optionArray}
                         clickHandler={selectOptionHandler} />
@@ -109,7 +73,7 @@ function Question() {
                         </button>
                     </div>
                     <h3>Your current high score is {highScore}</h3>
-                </>
+                </div>
             })
     )
 }

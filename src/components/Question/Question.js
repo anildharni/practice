@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import QuizAppContext from '../store/context';
+import QuizAppContext from '../store/Context';
 import QuestionItem from './QuestionItem'
 
 function Question() {

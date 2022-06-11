@@ -12,6 +12,7 @@ Practicing React Concepts such as React-Router-DOM v6, UseRoutes, UseContext, Us
 
 
 
+
 Time started at 10.27AM Took break at 11.16AM Resuming back 11:28AM Break at 12.00AM Resumed at 12.03 Break at 12.12PM Starting back at 12.23PM Completed at 12.58PM
 
 Started the practice to shift state management to context and firebase fetch
